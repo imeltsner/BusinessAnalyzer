@@ -52,10 +52,12 @@ public class Stats {
                 neighborhoods.add(business.getNeighborhood());
             }
         }
+        System.out.println("-----------------------");
         System.out.println(code + " Business Summary");
         System.out.println("Total Businesses: " + count);
         System.out.println("Business Types: " + busTypes.size());
         System.out.println("Neighborhoods: " + neighborhoods.size());
+        System.out.println("-----------------------");
     }
 
     void getNAICSSummary(String code) {
@@ -81,10 +83,12 @@ public class Stats {
                 } 
             }
         }
+        System.out.println("-----------------------");
         System.out.println("NAICS " + code + " Summary");
         System.out.println("Total Businesses: " + count);
         System.out.println("Zip Codes: " + zipcodes.size());
         System.out.println("Neighborhoods: " + neighborhoods.size());
+        System.out.println("-----------------------");
     }
 
     void getSummary() {
@@ -101,8 +105,10 @@ public class Stats {
                 isNew++;
             }
         }
+        System.out.println("-----------------------");
         System.out.println("Total Businesses: " + count);
         System.out.println("Closed Businesses: " + closed);
         System.out.println("New Businesses In Last Year: " + isNew);
+        System.out.println("-----------------------");
     }
 }
