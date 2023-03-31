@@ -37,8 +37,9 @@ public class Stats {
         int count = 0;
         HashSet<String> busTypes = new HashSet<String>();
         HashSet<String> neighborhoods = new HashSet<String>();
-        for (int i = 0; i < items.size(); i++) {
-            Item business = items.get(i);
+        Iterator<Item> iterator = items.iterator();
+        while (iterator.hasNext()) {
+            Item business = iterator.next();
             if (business.getZipcode().equals(code)) {
                 count++;
                 busTypes.add(business.getType());
@@ -56,8 +57,9 @@ public class Stats {
         int target = Integer.parseInt(code);
         HashSet<String> zipcodes = new HashSet<String>();
         HashSet<String> neighborhoods = new HashSet<String>();
-        for (int i = 0; i < items.size(); i++) {
-            Item business = items.get(i);
+        Iterator<Item> iterator = items.iterator();
+        while (iterator.hasNext()) {
+            Item business = iterator.next();
             String nCode = business.getNAICS();
             String[] allCodes = nCode.split(" ");
             for (int j = 0; j < allCodes.length; j++) {
@@ -82,8 +84,9 @@ public class Stats {
     void getSummary() {
         int count = items.size();
         int closed = 0;
-        for (int i = 0; i < items.size(); i++) {
-            Item business = items.get(i);
+        Iterator<Item> iterator = items.iterator();
+        while (iterator.hasNext()) {
+            Item business = iterator.next();
             if (!business.getOpen()) {
                 closed++;
             }
