@@ -32,6 +32,14 @@
 <h4>size()</h4>
 <p>Time: O(1)</p>
 <p>Space: O(1)</p>
+<h3>Iterator Functions</h3>
+<h4>hasNext()</h4>
+<p>Time: O(1)</p>
+<p>Space: O(1)</p>
+<h4>next()</h4>
+<p>Time: O(1)</p>
+<p>Space: O(1)</p>
+
 
 
 
