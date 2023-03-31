@@ -2,6 +2,10 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Reads commands from user and outputs summary stats
+ * @author Isaac Meltsner
+ */
 public class BusinessAnalyzer {
     public static void main(String[] args) {
         String filePath = args[0];

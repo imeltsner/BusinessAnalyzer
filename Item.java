@@ -1,4 +1,9 @@
+/**
+ * Stores relevant info for a single business
+ * @author Isaac Meltsner
+ */
 public class Item {
+    //class variables
     private String zipcode;
     private String NAICS;
     private String type;
@@ -6,6 +11,10 @@ public class Item {
     private boolean isOpen;
     private boolean isNew;
 
+    /**
+     * Parses and stores relevant data
+     * @param line a single line from CSV file
+     */
     Item(String line) {
         String[] data = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
         zipcode = data[14];

@@ -1,3 +1,7 @@
+/**
+ * List interface
+ * @author Isaac Meltsner
+ */
 public interface List<T> {
     public T get(int pos);
     public boolean add(T item);

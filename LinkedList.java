@@ -1,3 +1,7 @@
+/**
+ * Custom LinkedList implementation
+ * @author Isaac Meltsner
+ */
 public class LinkedList<T> implements List<T> {
     private class Node {
         T data;

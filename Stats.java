@@ -3,9 +3,17 @@ import java.io.FileNotFoundException;
 import java.util.HashSet;
 import java.util.Scanner;
 
+/**
+ * Creates list of spreadsheet data and outputs summary statistics
+ * @author Isaac Meltsner
+ */
 public class Stats {
     List<Item> items;
-
+    /**
+     * Reads CSV file and stores contents in list
+     * @param filePath name of CSV file
+     * @param flag AL for ArrayList, LL for LinkedList
+     */
     Stats(String filePath, String flag) {
         boolean firstLine = true;
         if (flag.equals("AL")) {
@@ -39,6 +47,10 @@ public class Stats {
         return items;
     }
 
+    /**
+     * Outputs summary stats based on zipcode
+     * @param code zipcode of businesses
+     */
     void getZipSummary(String code) {
         int count = 0;
         HashSet<String> busTypes = new HashSet<String>();
@@ -60,6 +72,10 @@ public class Stats {
         System.out.println("-----------------------");
     }
 
+    /**
+     * Outputs summary stats based on NAICS code
+     * @param code NAICS code of businesses
+     */
     void getNAICSSummary(String code) {
         int count = 0;
         int target = Integer.parseInt(code);
@@ -91,6 +107,9 @@ public class Stats {
         System.out.println("-----------------------");
     }
 
+    /**
+     * Outputs general summary stats of all businesses
+     */
     void getSummary() {
         int count = items.size();
         int closed = 0;

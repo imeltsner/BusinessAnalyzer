@@ -1,3 +1,7 @@
+/**
+ * Custom ArrayList implementation
+ * @author Isaac Meltsner
+ */
 public class ArrayList<T> implements List<T> {
     T[] arr;
     int size;
