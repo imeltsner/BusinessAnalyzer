@@ -10,6 +10,7 @@ public class BusinessAnalyzer {
         Stats stats = new Stats(filePath, flag);
         Scanner scan = new Scanner(System.in);
         while (true) {
+            System.out.println("Enter Command: ");
             String command = scan.nextLine().toLowerCase();
             String[] commandArray = command.split(" ");
             if (command.contains("zip")) {
@@ -21,10 +22,16 @@ public class BusinessAnalyzer {
                 commands.add(command);
             }
             else if (command.contains("history")) {
+                System.out.println("-----------------------");
                 Iterator<String> iter = commands.iterator();
                 while (iter.hasNext()) {
                     System.out.println(iter.next());
                 }
+                System.out.println("-----------------------");
+            }
+            else if (command.equals("summary")) {
+                stats.getSummary();
+                commands.add(command);
             }
             else if (command.contains("quit")) {
                 break;
