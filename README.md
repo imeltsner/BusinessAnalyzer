@@ -5,9 +5,9 @@
 <h4>get()</h4>
 <p>Time: O(1)</p><p>Space: O(1)</p>
 <h4>add() end of list</h4>
-<p>Time: Ammortized</p>
-<p>O(1) Space: O(1)</p>
-<h4> add() at position</h4>
+<p>Time: Ammortized O(1)</p>
+<p>Space: O(1)</p>
+<h4>add() at position</h4>
 <p>Time: Ammortized O(n), where n = size-position</p>
 <p>Space: O(1)</p>
 <h4>remove()</h4>
