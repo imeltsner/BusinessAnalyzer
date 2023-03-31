@@ -20,7 +20,7 @@
 <h4>get()</h4>
 <p>Time: O(n), where n is position in the list</p>
 <p>Space: O(1)</p>
-<h4>add()t</h4>
+<h4>add() at start</h4>
 <p>Time: O(1)</p>
 <p>Space: O(1)</p>
 <h4> add() at position</h4>
