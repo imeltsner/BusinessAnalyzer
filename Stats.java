@@ -7,6 +7,7 @@ public class Stats {
     List<Item> items;
 
     Stats(String filePath, String flag) {
+        boolean firstLine = true;
         if (flag.equals("AL")) {
             items = new ArrayList<Item>();
         }
@@ -17,9 +18,14 @@ public class Stats {
             Scanner scan = new Scanner(new File(filePath));
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
-                Item data = new Item(line);
-                if (!data.getNAICS().equals("") && !data.getNeighborhood().equals("") && !data.getType().equals("") && !data.getZipcode().equals("") && data.getZipcode().length() == 5) {
-                    items.add(data);
+                if (!firstLine) {
+                    Item data = new Item(line);
+                    if (!data.getNAICS().equals("") && !data.getNeighborhood().equals("") && !data.getType().equals("") && !data.getZipcode().equals("") && data.getZipcode().length() == 5) {
+                        items.add(data);
+                    }
+                }
+                else {
+                    firstLine = !firstLine;
                 }
             }
             scan.close();
@@ -84,14 +90,19 @@ public class Stats {
     void getSummary() {
         int count = items.size();
         int closed = 0;
+        int isNew = 0;
         Iterator<Item> iterator = items.iterator();
         while (iterator.hasNext()) {
             Item business = iterator.next();
             if (!business.getOpen()) {
                 closed++;
             }
+            if (business.getNew()) {
+                isNew++;
+            }
         }
         System.out.println("Total Businesses: " + count);
         System.out.println("Closed Businesses: " + closed);
+        System.out.println("New Businesses In Last Year: " + isNew);
     }
 }
