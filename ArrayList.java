@@ -49,11 +49,6 @@ public class ArrayList<T> implements List<T> {
             throw new IndexOutOfBoundsException();
         }
         T temp = arr[pos];
-        if (pos == size - 1) {
-            arr[pos] = null;
-            size--;
-            return temp;
-        }
         for (int i = pos; i < arr.length-1; i++) {
             arr[i] = arr[i+1];
         }
